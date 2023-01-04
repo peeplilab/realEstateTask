@@ -65,6 +65,7 @@ const Table = ({ mockData }) => {
     event.preventDefault();
     let filters = {}
     let results = filteredData;
+    console.log(results,'ffft');
     if (logId) {
       filters.logId = logId
       results = results.filter((key) => {
@@ -151,7 +152,7 @@ const Table = ({ mockData }) => {
             style={{
               height: 30,
             }}
-            type="number"
+       //     type="number"
             value={logId}
             onChange={(e) => setLogId(e.target.value)}
             placeholder="Log ID"
@@ -162,7 +163,7 @@ const Table = ({ mockData }) => {
         }} >
           <input
             style={{ height: 30 }}
-            type="number"
+            //type="number"
             value={appId}
             onChange={(e) => setAppId(e.target.value)}
             placeholder="Application Id"
@@ -195,14 +196,14 @@ const Table = ({ mockData }) => {
         <div>
           <DatePicker
             className="date-input"
-            selected={fromDate ? parse(fromDate, 'MM-dd-yyyy', new Date()) : new Date()}
+            selected={fromDate && parse(fromDate, 'MM-dd-yyyy', new Date()) }
             onChange={handleDate}
           />
         </div>
         <div>
           <DatePicker
             className="date-input"
-            selected={toDate ? parse(toDate, 'MM-dd-yyyy', new Date()) : new Date()}
+            selected={toDate && parse(toDate, 'MM-dd-yyyy', new Date()) }
             onChange={handleDate1}
           />
         </div>

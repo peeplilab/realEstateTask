@@ -26,9 +26,10 @@ export const COLUMNS = [
   {
     Header: "Date",
     accessor: "creationTimestamp",
-    Cell: ({ value }) => {
-      return format(new Date(value), "dd/MM/yyyy");
-    },
+    //Cell: ({ value }) => {
+     //return format(new Date(value), "dd/MM/yyyy");
+    // return format(new Date(value), "yyyy-MM-dd'T'HH:mm:ss.SSS")
+    //},
     disableFilters: true
   },
   // {
