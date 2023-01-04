@@ -1,0 +1,506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn text 1`] = `
+<div
+  className="container"
+>
+  <div
+    style={
+      Object {
+        "alignItems": "revert",
+      }
+    }
+  >
+    <p>
+      Home &gt; Administration &gt; Logger Search
+    </p>
+  </div>
+  <div
+    className="inputs"
+  >
+    <div
+      className="logid"
+      style={
+        Object {
+          "marginRight": 30,
+        }
+      }
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Log ID"
+        style={
+          Object {
+            "height": 30,
+          }
+        }
+        type="number"
+      />
+    </div>
+    <div
+      className="logid"
+      style={
+        Object {
+          "marginRight": 30,
+        }
+      }
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Application Id"
+        style={
+          Object {
+            "height": 30,
+          }
+        }
+        type="number"
+      />
+    </div>
+    <div>
+      <div
+        className="select-input css-b62m3t-container"
+        onKeyDown={[Function]}
+      >
+        <span
+          className="css-1f43avz-a11yText-A11yText"
+          id="react-select-2-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          className="css-1f43avz-a11yText-A11yText"
+        />
+        <div
+          className=" css-13cymwt-control"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className=" css-1fdsijx-ValueContainer"
+          >
+            <div
+              className=" css-1jqq78o-placeholder"
+              id="react-select-2-placeholder"
+            >
+              Application Type
+            </div>
+            <div
+              className=" css-qbdosj-Input"
+              data-value=""
+            >
+              <input
+                aria-autocomplete="list"
+                aria-describedby="react-select-2-placeholder"
+                aria-expanded={false}
+                aria-haspopup={true}
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect="off"
+                className=""
+                disabled={false}
+                id="react-select-2-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                role="combobox"
+                spellCheck="false"
+                style={
+                  Object {
+                    "background": 0,
+                    "border": 0,
+                    "color": "inherit",
+                    "font": "inherit",
+                    "gridArea": "1 / 2",
+                    "label": "input",
+                    "margin": 0,
+                    "minWidth": "2px",
+                    "opacity": 1,
+                    "outline": 0,
+                    "padding": 0,
+                    "width": "100%",
+                  }
+                }
+                tabIndex={0}
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              className=" css-1u9des2-indicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+              className=" css-1xc3v61-indicatorContainer"
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="css-tj5bde-Svg"
+                focusable="false"
+                height={20}
+                viewBox="0 0 20 20"
+                width={20}
+              >
+                <path
+                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="inputs"
+  >
+    <div
+      style={
+        Object {
+          "marginRight": 30,
+        }
+      }
+    >
+      <div
+        className="select-input css-b62m3t-container"
+        onKeyDown={[Function]}
+      >
+        <span
+          className="css-1f43avz-a11yText-A11yText"
+          id="react-select-3-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          className="css-1f43avz-a11yText-A11yText"
+        />
+        <div
+          className=" css-13cymwt-control"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className=" css-1fdsijx-ValueContainer"
+          >
+            <div
+              className=" css-1jqq78o-placeholder"
+              id="react-select-3-placeholder"
+            >
+              Action Type
+            </div>
+            <div
+              className=" css-qbdosj-Input"
+              data-value=""
+            >
+              <input
+                aria-autocomplete="list"
+                aria-describedby="react-select-3-placeholder"
+                aria-expanded={false}
+                aria-haspopup={true}
+                autoCapitalize="none"
+                autoComplete="off"
+                autoCorrect="off"
+                className=""
+                disabled={false}
+                id="react-select-3-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                role="combobox"
+                spellCheck="false"
+                style={
+                  Object {
+                    "background": 0,
+                    "border": 0,
+                    "color": "inherit",
+                    "font": "inherit",
+                    "gridArea": "1 / 2",
+                    "label": "input",
+                    "margin": 0,
+                    "minWidth": "2px",
+                    "opacity": 1,
+                    "outline": 0,
+                    "padding": 0,
+                    "width": "100%",
+                  }
+                }
+                tabIndex={0}
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <span
+              className=" css-1u9des2-indicatorSeparator"
+            />
+            <div
+              aria-hidden="true"
+              className=" css-1xc3v61-indicatorContainer"
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+            >
+              <svg
+                aria-hidden="true"
+                className="css-tj5bde-Svg"
+                focusable="false"
+                height={20}
+                viewBox="0 0 20 20"
+                width={20}
+              >
+                <path
+                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="date-input"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="01/04/2023"
+          />
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="date-input"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            readOnly={false}
+            type="text"
+            value="01/04/2023"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+      Search
+    </button>
+  </div>
+  <table
+    role="table"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        <th
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          LogId
+          <span />
+          <div />
+        </th>
+        <th
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Action Type
+          <span />
+          <div />
+        </th>
+        <th
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Application Id
+          <span />
+          <div />
+        </th>
+        <th
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Application Type
+          <span />
+          <div />
+        </th>
+        <th
+          colSpan={1}
+          onClick={[Function]}
+          role="columnheader"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+          title="Toggle SortBy"
+        >
+          Date
+          <span />
+          <div />
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      role="rowgroup"
+    />
+  </table>
+  <div
+    className="pagination"
+    style={
+      Object {
+        "marginTop": "1rem",
+      }
+    }
+  >
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      &lt;&lt;
+    </button>
+     
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      &lt;
+    </button>
+     
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      &gt;
+    </button>
+     
+    <button
+      disabled={true}
+      onClick={[Function]}
+    >
+      &gt;&gt;
+    </button>
+     
+    <span>
+      Page
+       
+      <strong>
+        1
+         of 
+        0
+      </strong>
+       
+    </span>
+    <span>
+      | Go to page:
+       
+      <input
+        defaultValue={1}
+        onChange={[Function]}
+        style={
+          Object {
+            "width": "100px",
+          }
+        }
+        type="number"
+      />
+    </span>
+     
+    <select
+      onChange={[Function]}
+      value={10}
+    >
+      <option
+        value={10}
+      >
+        Show 
+        10
+      </option>
+      <option
+        value={20}
+      >
+        Show 
+        20
+      </option>
+      <option
+        value={30}
+      >
+        Show 
+        30
+      </option>
+      <option
+        value={40}
+      >
+        Show 
+        40
+      </option>
+      <option
+        value={50}
+      >
+        Show 
+        50
+      </option>
+    </select>
+  </div>
+</div>
+`;
