@@ -37,7 +37,6 @@ const Table = ({ mockData }) => {
   const [applicationType, setApplicationType] = useState('')
   const [appId, setAppId] = useState('')
 
-  const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
@@ -102,7 +101,6 @@ const Table = ({ mockData }) => {
     const queryParams = Object.fromEntries([...searchParams]);
     let filters = {}
     let results = mockData;
-    console.log(queryParams,'QPS');
     if (queryParams.logId) {
       filters.logId = queryParams.logId
       results = results.filter((key) => {
