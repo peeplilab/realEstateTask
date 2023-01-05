@@ -6,7 +6,7 @@ import DatePicker from 'react-datepicker';
 import Select from 'react-select';
 import { format, isAfter, parse, parseISO, isBefore, isEqual } from 'date-fns';
 import '../App.css';
-import { useSearchParams, useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import 'react-datepicker/dist/react-datepicker.css';
 
 const options = [
