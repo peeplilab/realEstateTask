@@ -182,9 +182,8 @@ const Table = ({ mockData }) => {
 
   return (
     <>
-      <div className="inputs" style={{ alignContent:'flexStart' }}>
-        <p>{`Logger Search`}</p>
-      </div>
+        <p>Logger Search</p>
+    
       <div className="inputs">
         <div style={{
           marginRight: 20,

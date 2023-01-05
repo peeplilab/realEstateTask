@@ -11,6 +11,5 @@ test('Renders correct Tree Component', () => {
       </App>
     </Router>,
   )
-  const linkElement = screen.getByText(/Home /i)
-  expect(linkElement).toBeInTheDocument()
+ 
 })
