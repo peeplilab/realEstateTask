@@ -41,10 +41,6 @@ const Table = ({ mockData }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    setfilteredData(mockData)
-  }, [mockData]);
-
-  useEffect(() => {
     const queryParams = Object.fromEntries([...searchParams]);
     // eslint-disable-next-line 
     setFromDate(queryParams.fromDate || '');
@@ -59,7 +55,7 @@ const Table = ({ mockData }) => {
   useEffect(() => {
     handleSubmit();
    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location])
+  }, [searchParams])
 
   const handleSearch = () => {
     let paramsData = {};
@@ -103,51 +99,52 @@ const Table = ({ mockData }) => {
     };
   }, []);
   const handleSubmit = () => {
+    const queryParams = Object.fromEntries([...searchParams]);
     let filters = {}
     let results = mockData;
-    if (logId) {
-      filters.logId = logId
+    console.log(queryParams,'QPS');
+    if (queryParams.logId) {
+      filters.logId = queryParams.logId
       results = results.filter((key) => {
         //return String(key.logId) === String(logId)
-        return String(key.logId).includes(String(logId))
+        return String(key.logId).includes(String(queryParams.logId))
       });
     }
-    if (appId) {
-      filters.appId = appId;
+    if (queryParams.appId) {
+      filters.appId = queryParams.appId;
       results = results.filter((key) => {
-        return String(key.applicationId).includes(String(appId))
+        return String(key.applicationId).includes(String(queryParams.appId))
       });
 
     }
-    if (option) {
-      filters.actionType = option;
+    if (queryParams.option) {
+      filters.actionType = queryParams.option;
       results = results.filter((key) => {
-        return String(key.actionType) === String(option)
+        return String(key.actionType) === String(queryParams.option)
       });
 
     }
-    if (applicationType) {
-      filters.appType = applicationType;
+    if (queryParams.applicationType) {
+      filters.appType = queryParams.applicationType;
       results = results.filter((key) => {
-        return String(key.applicationType) === String(applicationType)
+        return String(key.applicationType) === String(queryParams.applicationType)
       });
     }
-    if (fromDate) {
-      let formattedFromDate = new Date(fromDate);
+    if (queryParams.fromDate) {
+      let formattedFromDate = new Date(queryParams.fromDate);
       results = results.filter((key) => {
         return isAfter(parseISO(key.creationTimestamp), formattedFromDate) ||
           isEqual(parseISO(key.creationTimestamp), formattedFromDate)
       });
     }
-    if (toDate) {
-      let formattedToDate = new Date(toDate);
+    if (queryParams.toDate) {
+      let formattedToDate = new Date(queryParams.toDate);
       results = results.filter((key) => {
         return isBefore(parseISO(key.creationTimestamp), formattedToDate) ||
           isEqual(parseISO(key.creationTimestamp), formattedToDate)
       });
     }
     setfilteredData(results);
-    console.log(results,'ttt');
     return results;
 
   }
