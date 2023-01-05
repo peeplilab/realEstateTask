@@ -81,7 +81,6 @@ const Table = ({ mockData }) => {
     if (appId) {
       paramsData.appId = appId;
     }
-    console.log(paramsData, 'pdata');
     setSearchParams(paramsData);
   };
   const handleSelect = (option) => {
@@ -104,21 +103,19 @@ const Table = ({ mockData }) => {
     };
   }, []);
   const handleSubmit = () => {
-    // event.preventDefault();
     let filters = {}
-    // let results = filteredData;
     let results = mockData;
-    console.log(results, 'ffft');
     if (logId) {
       filters.logId = logId
       results = results.filter((key) => {
-        return Number(key.logId) === Number(logId)
+        //return String(key.logId) === String(logId)
+        return String(key.logId).includes(String(logId))
       });
     }
     if (appId) {
       filters.appId = appId;
       results = results.filter((key) => {
-        return Number(key.applicationId) === Number(appId)
+        return String(key.applicationId).includes(String(appId))
       });
 
     }
@@ -149,7 +146,6 @@ const Table = ({ mockData }) => {
           isEqual(parseISO(key.creationTimestamp), formattedToDate)
       });
     }
-    console.log(results, 'results');
     setfilteredData(results);
     return results;
 
@@ -186,7 +182,7 @@ const Table = ({ mockData }) => {
   return (
     <>
       <div className="inputs" style={{ alignContent:'flexStart' }}>
-        <p>{`Home > Administration > Logger Search`}</p>
+        <p>{`Logger Search`}</p>
       </div>
       <div className="inputs">
         <div style={{
