@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="container">
-      <Table mockData={data} />
+      {data.length > 0 ?       <Table mockData={data} /> : 'Loading'}
     </div>
   );
 }

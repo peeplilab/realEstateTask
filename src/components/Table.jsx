@@ -4,12 +4,10 @@ import { useTable, useSortBy, useGlobalFilter, useFilters, usePagination } from 
 import { ColumnFilter } from "./ColumnFilter";
 import DatePicker from 'react-datepicker';
 import Select from 'react-select';
-import { format, isAfter, parse, parseISO, isBefore,isEqual } from 'date-fns';
+import { format, isAfter, parse, parseISO, isBefore, isEqual } from 'date-fns';
 import '../App.css';
-
+import { useSearchParams, useLocation } from "react-router-dom";
 import 'react-datepicker/dist/react-datepicker.css';
-import { useQueryState } from "./useQueryParams";
-//import { isEqual } from "date-fns/esm";
 
 const options = [
   { value: 'LEASE_CLOSURE', label: 'LEASE_CLOSURE' },
@@ -31,17 +29,61 @@ const options1 = [
 ];
 const Table = ({ mockData }) => {
   const columns = useMemo(() => COLUMNS, []); // memoize before adding to useTable hook
-  const [fromDate, setFromDate] = useQueryState('fromDate');
-  const [toDate, setToDate] = useQueryState('toDate');
-  const [option, setOption] = useQueryState('actionType');
-  const [logId, setLogId] = useQueryState('logId');
-  const [applicationType, setApplicationType] = useQueryState('applicationType');
-  const [appId, setAppId] = useQueryState('appId');
   const [filteredData, setfilteredData] = useState(mockData);
+  const [fromDate, setFromDate] = useState('')
+  const [toDate, setToDate] = useState('')
+  const [option, setOption] = useState('')
+  const [logId, setLogId] = useState('')
+  const [applicationType, setApplicationType] = useState('')
+  const [appId, setAppId] = useState('')
+
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   useEffect(() => {
     setfilteredData(mockData)
-  }, [mockData])
+  }, [mockData]);
 
+  useEffect(() => {
+    const queryParams = Object.fromEntries([...searchParams]);
+    // eslint-disable-next-line 
+    setFromDate(queryParams.fromDate || '');
+    setToDate(queryParams.toDate || '');
+    setOption(queryParams.option || '');
+    setLogId(queryParams.logId || '');
+    setApplicationType(applicationType);
+    setAppId(queryParams.appId || '')
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
+  useEffect(() => {
+    handleSubmit();
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location])
+
+  const handleSearch = () => {
+    let paramsData = {};
+    if (logId) {
+      paramsData.logId = logId;
+    }
+    if (option) {
+      paramsData.option = option;
+    }
+    if (applicationType) {
+      paramsData.applicationType = applicationType;
+    }
+    if (fromDate) {
+      paramsData.fromDate = fromDate;
+    }
+    if (toDate) {
+      paramsData.toDate = toDate;
+    }
+    if (appId) {
+      paramsData.appId = appId;
+    }
+    console.log(paramsData, 'pdata');
+    setSearchParams(paramsData);
+  };
   const handleSelect = (option) => {
     setOption(option?.value || null);
   };
@@ -61,11 +103,12 @@ const Table = ({ mockData }) => {
       Filter: ColumnFilter,
     };
   }, []);
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    // event.preventDefault();
     let filters = {}
-    let results = filteredData;
-    console.log(results,'ffft');
+    // let results = filteredData;
+    let results = mockData;
+    console.log(results, 'ffft');
     if (logId) {
       filters.logId = logId
       results = results.filter((key) => {
@@ -106,6 +149,7 @@ const Table = ({ mockData }) => {
           isEqual(parseISO(key.creationTimestamp), formattedToDate)
       });
     }
+    console.log(results, 'results');
     setfilteredData(results);
     return results;
 
@@ -115,7 +159,7 @@ const Table = ({ mockData }) => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    prepareRow,    
+    prepareRow,
     page,
     canPreviousPage,
     canNextPage,
@@ -141,29 +185,27 @@ const Table = ({ mockData }) => {
 
   return (
     <>
-    <div style={{alignItems:'revert'}}>
-    <p>{`Home > Administration > Logger Search`}</p>
-    </div>
+      <div className="inputs" style={{ alignContent:'flexStart' }}>
+        <p>{`Home > Administration > Logger Search`}</p>
+      </div>
       <div className="inputs">
         <div style={{
-          marginRight: 30,
+          marginRight: 20,
         }} className="logid">
           <input
             style={{
               height: 30,
             }}
-       //     type="number"
             value={logId}
             onChange={(e) => setLogId(e.target.value)}
             placeholder="Log ID"
           />
         </div>
         <div className="logid" style={{
-          marginRight: 30,
+          marginRight: 20,
         }} >
           <input
             style={{ height: 30 }}
-            //type="number"
             value={appId}
             onChange={(e) => setAppId(e.target.value)}
             placeholder="Application Id"
@@ -180,9 +222,12 @@ const Table = ({ mockData }) => {
           />
         </div>
       </div>
-      <div className="inputs">
+      <div style={{
+          marginTop: 8,
+          marginBottom: 8
+        }} className="inputs">
         <div style={{
-          marginRight: 30,
+          marginRight: 20,
         }} >
           <Select
             className="select-input"
@@ -196,19 +241,21 @@ const Table = ({ mockData }) => {
         <div>
           <DatePicker
             className="date-input"
-            selected={fromDate && parse(fromDate, 'MM-dd-yyyy', new Date()) }
+            selected={fromDate && parse(fromDate, 'MM-dd-yyyy', new Date())}
             onChange={handleDate}
+            placeholderText="From Date"
           />
         </div>
         <div>
           <DatePicker
             className="date-input"
-            selected={toDate && parse(toDate, 'MM-dd-yyyy', new Date()) }
+            selected={toDate && parse(toDate, 'MM-dd-yyyy', new Date())}
             onChange={handleDate1}
+            placeholderText="To Date"
           />
         </div>
         <button
-          onClick={(e) => handleSubmit(e)}
+          onClick={(e) => handleSearch(e)}
           className='button'
         >
           Search
