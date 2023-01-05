@@ -147,6 +147,7 @@ const Table = ({ mockData }) => {
       });
     }
     setfilteredData(results);
+    console.log(results,'ttt');
     return results;
 
   }
@@ -240,6 +241,7 @@ const Table = ({ mockData }) => {
             selected={fromDate && parse(fromDate, 'MM-dd-yyyy', new Date())}
             onChange={handleDate}
             placeholderText="From Date"
+            showMonthYearPicker
           />
         </div>
         <div>
@@ -248,6 +250,7 @@ const Table = ({ mockData }) => {
             selected={toDate && parse(toDate, 'MM-dd-yyyy', new Date())}
             onChange={handleDate1}
             placeholderText="To Date"
+            showMonthYearPicker
           />
         </div>
         <button
