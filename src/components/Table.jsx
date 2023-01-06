@@ -46,18 +46,18 @@ const Table = ({ mockData }) => {
     setToDate(queryParams.toDate || '');
     setOption(queryParams.option || '');
     setLogId(queryParams.logId || '');
-    setApplicationType(applicationType);
+    setApplicationType(queryParams.applicationType || '');
     setAppId(queryParams.appId || '')
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   useEffect(() => {
     handleSubmit();
-    console.log(searchParams, 'rttt');
-   // eslint-disable-next-line react-hooks/exhaustive-deps
+   
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams])
 
-  
   const handleSearch = () => {
     let paramsData = {};
     if (logId) {
@@ -125,7 +125,7 @@ const Table = ({ mockData }) => {
 
     }
     if (queryParams.applicationType) {
-      filters.appType = queryParams.applicationType;
+      filters.applicationType = queryParams.applicationType;
       results = results.filter((key) => {
         return String(key.applicationType) === String(queryParams.applicationType)
       });
@@ -179,8 +179,8 @@ const Table = ({ mockData }) => {
 
   return (
     <>
-        <p>Logger Search</p>
-    
+      <p>Logger Search</p>
+
       <div className="inputs">
         <div style={{
           marginRight: 20,
@@ -216,9 +216,9 @@ const Table = ({ mockData }) => {
         </div>
       </div>
       <div style={{
-          marginTop: 8,
-          marginBottom: 8
-        }} className="inputs">
+        marginTop: 8,
+        marginBottom: 8
+      }} className="inputs">
         <div style={{
           marginRight: 20,
         }} >
