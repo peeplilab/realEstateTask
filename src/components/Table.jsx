@@ -53,9 +53,11 @@ const Table = ({ mockData }) => {
 
   useEffect(() => {
     handleSubmit();
+    console.log(searchParams, 'rttt');
    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams])
 
+  
   const handleSearch = () => {
     let paramsData = {};
     if (logId) {
@@ -255,7 +257,6 @@ const Table = ({ mockData }) => {
         </button>
 
       </div>
-      {/* <GlobalFilter globalFilter={globalFilter} setGlobalFilter={setGlobalFilter} /> */}
 
       {/* apply the table props */}
       <table {...getTableProps()}>
